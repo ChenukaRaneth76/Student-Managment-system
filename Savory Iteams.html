@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Savory Iteams</title>
+	<link rel="stylesheet" type="text/css" href="wad.css">
+</head>
+
+<body>
+	<div class="topnav">
+  <a class="active" href="Home.html">Home</a>
+  <a href="contact.html">Contact</a>
+  <a href="About.html">About</a>
+ <a href="Order.html">Order</a>
+  <input type="text" placeholder="Search..">
+		
+		
+		<div class="dropdown">
+    <button class="dropbtn"> Cake Products
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Birthday Cakes.html">Birthday Cakes</a>
+      <a href="Anniversary Cakes.html">Anniversary Cakes</a>
+      <a href="Chocolate Cakes.html">Chocolate Cakes</a>
+	  <a href="Redvelvet Cakes.html">Redvelvet Cakes</a>
+	  <a href="Coffee Cakes.html">Coffee Cakes</a>
+	  <a href="Eggless Cakes.html">Eggless Cakes</a>
+      <a href="Fruit Cakes.html">Fruit Cakes</a>
+ </div>
+ </div>
+
+	<div class="dropdown">
+    <button class="dropbtn"> Bakery Products
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Mini Pizza.html">Mini Pizza</a>
+      <a href="Donuts.html">Donuts</a>
+      <a href="Cup Cakes.html">Cup Cakes</a>
+	  <a href="Savory Iteams.html">Savory Iteams </a>
+	  <a href="Muffins.html">Muffins</a>
+	 
+ </div>
+ </div>
+</div>
+	
+	<h2>SAVORY ITEAMS</h2>
+	
+	<div class="row">
+  <div class="column Birthday">
+    <div class="content">
+     <img src="images/cutlot.jpg" alt="Savory Iteams" style="width:100%">
+      <h4>Cutlet</h4>
+	<p>veg Cutlet - Rs.80.00 <br></p>
+
+    </div>
+  </div>
+  <div class="column Birthday">
+    <div class="content">
+     <img src="images/springchrols.jpg" alt="Savory Iteams" style="width:100%">
+      <h4>Spring RollS</h4>
+      <p>veg Rs.80.00</p>
+    </div>
+  </div>
+  <div class="column Anniversary">
+    <div class="content">
+      <img src="images/puffpastry.jpg" alt="Savory Iteams" style="width:100%">
+      <h4>White Choclate Anniversary Cakes</h4>
+      <p>Veg - Rs.110/ Tuna - Rs.140/ Chicken - Rs.140</p>
+    </div>
+  </div>
+
+  <div class="column Anniversary">
+    <div class="content">
+      <img src="images/hamchesepuff.webp" alt="Savory Iteams" style="width:100%">
+      <h4>Ham & Cheese Puff</h4>
+      <p>Rs.170.00</p>
+    </div>
+  </div>
+  <div class="column Other">
+    <div class="content">
+      <img src="images/eggpuf.jpg" alt="Savory Iteams" style="width:100%">
+      <h4>Egg Puff</h4>
+      <p>Rs.140.00</p>
+    </div>
+
+	</div>
+	
+		</div>	
+		<script>
+	filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</body>
+</html>
